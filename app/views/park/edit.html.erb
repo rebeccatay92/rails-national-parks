@@ -1,8 +1,8 @@
 <%= render 'navbar' %>
 
-<h1>Add a park to the listings</h1>
+<h1>Edit listing</h1>
 
-<%= form_for @park, url: parks_create_path do |f| %>
+<%= form_for @park, url: parks_update_path do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -21,4 +21,5 @@
   <p>
     <%= f.submit %>
   </p>
+
 <% end %>

@@ -9,13 +9,29 @@ class ParkController < ApplicationController
     render :showone
   end
 
+  def new
+    @park = Park.new
+  end
+
+  def edit
+    @park = Park.find(params[:id])
+    render :edit
+  end
+
   def create
     @park = Park.new(park_params)
     @park.save
-    redirect_to action: 'showall'
-    # render plain: params[:park].inspect
+    redirect_to parks_path
   end
 
+  def update
+    @park = Park.find(params[:id])
+    if @park.update(park_params)
+      redirect_to parks_path
+    else
+      render 'edit'
+    end
+  end
 
   def destroy
     @park = Park.find(params[:id])
