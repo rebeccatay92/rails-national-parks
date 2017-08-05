@@ -1,0 +1,16 @@
+<%= link_to "Home", root_path %>
+<%= link_to "View all", parks_path %>
+<%= link_to "Add a park", parks_new_path %>
+
+
+<h1>All National Parks</h1>
+
+
+<% @allparks.each do |park| %>
+<div>
+  <img src="park.picture" alt="">
+  <h1><%= park.name %></h1>
+  <p><%= park.description %></p>
+  <%= link_to "More details", parks_showone_path(park) %>
+</div>
+<% end %>
