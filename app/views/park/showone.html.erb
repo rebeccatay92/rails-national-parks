@@ -1,6 +1,7 @@
 <%= render 'navbar' %>
 
-<h1>More de<%=@thispark.name%></h1>
+<h1>More details: <%=@thispark.name%></h1>
 <img src="@thispark.picture" alt="">
 <p><%= @thispark.description %></p>
+
 <%= link_to "Back to parks listing", parks_path %>

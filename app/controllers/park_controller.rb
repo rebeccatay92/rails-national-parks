@@ -5,7 +5,7 @@ class ParkController < ApplicationController
   end
 
   def showone
-    @thispark = Park.find(params[:id])
+    @park = Park.find(params[:id])
     render :showone
   end
 
@@ -14,6 +14,13 @@ class ParkController < ApplicationController
     @park.save
     redirect_to action: 'showall'
     # render plain: params[:park].inspect
+  end
+
+
+  def destroy
+    @park = Park.find(params[:id])
+    @park.destroy
+    redirect_to parks_path
   end
 
   private

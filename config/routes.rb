@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/parks/new', to: 'park#new'
 
   get '/parks/:id', to: 'park#showone', as: 'parks_showone'
+  delete '/parks/:id', to: 'park#destroy', as: 'parks_delete'
+
 end
