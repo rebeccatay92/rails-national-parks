@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'application#home'
 
   get '/parks', to: 'park#showall'
+  post '/parks', to: 'park#create'
   get '/parks/new', to: 'park#new'
 
   get '/parks/:id', to: 'park#showone', as: 'parks_showone'
